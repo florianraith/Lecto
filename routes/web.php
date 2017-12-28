@@ -13,7 +13,9 @@
 
 Route::get('/', 'HomeController@index')->name('index');
 Route::auth();
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::post('/message/post', 'MessageController@post')->name('postMessage');
 Route::post('/message/delete', 'MessageController@delete')->name('deleteMessage');
+
+Route::get('/profile', 'ProfileController@profile')->name('profile');
+Route::get('/profile/{user_id}', 'ProfileController@show')->name('showProfile');

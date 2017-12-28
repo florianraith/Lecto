@@ -14,7 +14,7 @@
                         <label for="select-color">Color:</label>
                         <select class="form-control" id="select-color" name="color_id">
                             @foreach(\App\Lecto\MessageColor::getValues() as $color)
-                                <option value="{{ $color->getId() }}" {{ ($color->getId() == 7 ? 'selected="selected"' : '') }} data-suffix="{{ $color->getBSuffix() }}">{{$color->getName()}}</option>
+                                <option value="{{ $color->getId() }}" {!! ($color->getId() == 7 ? 'selected="selected"' : '') !!} data-suffix="{{ $color->getBSuffix() }}">{{$color->getName()}}</option>
                             @endforeach
                         </select>
                     </div>

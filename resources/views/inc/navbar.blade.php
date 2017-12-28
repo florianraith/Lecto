@@ -14,7 +14,7 @@
             @endguest
             @auth
                 <li class="nav-item">
-                    <a class="btn btn-outline-secondary mx-2" href="{{ route('dashboard') }}">{{ Auth::user()->name }}</a>
+                    <a class="btn btn-outline-secondary mx-2" href="{{ route('profile') }}">{{ Auth::user()->name }}</a>
                 </li>
                 <li class="nav-item">
                     <form action="{{ route('logout') }}" method="post">
