@@ -1,7 +1,11 @@
 body {
-    padding-top: 4.5rem;
-}
+     padding-top: 4.5rem;
+ }
 
 #login-dropdown {
     left: -50px;
+}
+
+#post-modal-header {
+    transition: background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }

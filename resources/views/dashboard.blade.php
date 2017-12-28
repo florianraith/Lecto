@@ -37,13 +37,13 @@
     <div class="row">
         <div class="card-columns">
             @foreach($messages as $message)
-                <div class="card border-dark">
-                    <div class="card-header bg-dark text-light">
+                <div class="card border-{{ $message->getColor()->getBSuffix() }}">
+                    <div class="card-header bg-{{ $message->getColor()->getBSuffix() }} text-{{ $message->getColor()->getBTextSuffix() }}">
                         {{ $message->user->name }}
                         <span class="ml-2">#{{ $message->id }}</span>
                         <div class="float-right">
-                            <small class="text-secondary mr-2">{{ $message->created_at }}</small>
-                            <button type="button" class="close text-light" aria-label="Close" style="margin-top: -3px;">
+                            <small class="mr-2">{{ $message->created_at }}</small>
+                            <button type="button" class="close text-{{ $message->getColor()->getBTextSuffix() }}" aria-label="Close" style="margin-top: -3px;">
                                 <span aria-hidden="true" class="delete-post" data-toggle="modal" data-target="#delete-modal" data-postid="{{ $message->id }}">&times;</span>
                             </button>
                         </div>

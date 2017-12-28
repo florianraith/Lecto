@@ -10,8 +10,11 @@
         <div class="row mt-3">
             <div class="card-columns">
                 @foreach($messages as $message)
-                    <div class="card border-dark">
-                        <div class="card-header bg-dark text-light">{{ $message->user->name }} <span class="ml-2">#{{ $message->id }}</span><small class="text-secondary ml-2 float-right">{{ $message->created_at }}</small></div>
+                    <div class="card border-{{ $message->getColor()->getBSuffix() }}">
+                        <div class="card-header bg-{{ $message->getColor()->getBSuffix() }} text-{{ $message->getColor()->getBTextSuffix() }}">
+                            {{ $message->user->name }}
+                            <span class="ml-2">#{{ $message->id }}</span><small class="ml-2 float-right">{{ $message->created_at }}</small>
+                        </div>
                         <div class="card-body">
                             {{ $message->message }}
                         </div>

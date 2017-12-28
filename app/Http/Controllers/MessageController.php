@@ -14,11 +14,13 @@ class MessageController extends Controller {
 
     public function post(Request $request) {
         $data = $request->validate([
-            'message' => 'required|string|max:255'
+            'message' => 'required|string|max:255',
+            'color_id' => 'integer|required'
         ]);
 
         $message = new Message;
         $message->message = $data['message'];
+        $message->color_id = $data['color_id'];
         $message->user_id = Auth::user()->id;
         $message->save();
 
