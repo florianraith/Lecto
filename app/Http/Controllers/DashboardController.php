@@ -21,7 +21,7 @@ class DashboardController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        $messages = Message::all()->where('user_id', Auth::user()->id)->sortBy('created_at');
+        $messages = Message::all()->where('user_id', Auth::user()->id)->sortByDesc('created_at');
         return view('dashboard')->with('messages', $messages);
     }
 }
