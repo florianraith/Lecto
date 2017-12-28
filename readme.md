@@ -12,6 +12,8 @@ A simple social network, inspired by [Twitter], programmed in php using Laravel.
 * Profile
   * The profile page displays all messages from the owner
   * On your own profile page you can create and delete messages 
+* Localization
+  * You can change the language by changing the url from /en/... to /de/...
 
 **Technologies used:**
  * [php] Popular general-purpose scripting language that is especially suited to web development.
