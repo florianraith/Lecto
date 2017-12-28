@@ -21,11 +21,11 @@
 
             @if(Auth::check() && Auth::user()->id == $user->id)
                 <div class="card border-dark">
-                    <div class="card-header bg-dark text-white">Your Profile</div>
+                    <div class="card-header bg-dark text-white">@lang('profile.yours')</div>
 
                     <div class="card-body">
-                        Welcome {{ Auth::user()->name }}!
-                        <button type="button" class="btn btn-dark float-right" data-toggle="modal" data-target="#post-modal">Post a message</button>
+                        @lang('profile.welcome') {{ Auth::user()->name }}!
+                        <button type="button" class="btn btn-dark float-right" data-toggle="modal" data-target="#post-modal">@lang('profile.post_message')</button>
                         @include('message.postmodal')
                     </div>
                 </div>
@@ -37,7 +37,7 @@
     @if(Auth::check() && Auth::user()->id == $user->id)
         @include('message.deletemodal')
         <div class="row justify-content-center my-3">
-            <h3>Your posts:</h3>
+            <h3>@lang('profile.your_posts')</h3>
         </div>
 
         <div class="row">
@@ -65,7 +65,7 @@
     {{-- This will display if the profile is NOT from the logged-in user. --}}
     @else
         <div class="row justify-content-center my-3">
-            <h3>{{ $user->name }}'s Posts:</h3>
+            <h3>@lang('profile.someone_posts', ['name' => $user->name])</h3>
         </div>
 
         <div class="row">

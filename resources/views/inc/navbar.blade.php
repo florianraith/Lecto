@@ -18,7 +18,7 @@
                 </li>
                 <li class="nav-item">
                     <form action="{{ route('logout') }}" method="post">
-                        <input type="submit" class="btn btn-outline-secondary" value="Log Out">
+                        <input type="submit" class="btn btn-outline-secondary" value="@lang('authform.logout')">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     </form>
                 </li>

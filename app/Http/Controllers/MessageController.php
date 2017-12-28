@@ -24,7 +24,7 @@ class MessageController extends Controller {
         $message->user_id = Auth::user()->id;
         $message->save();
 
-        return redirect('/dashboard');
+        return redirect()->route('profile');
     }
 
     public function delete(Request $request) {

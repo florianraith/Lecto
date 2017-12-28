@@ -17,7 +17,7 @@ class ProfileController extends Controller {
         $user = null;
 
         if(is_numeric($user_id)) {
-            $user = User::find($user_id);
+            $user = User::findOrFail($user_id);
         } else {
             $user = User::where('name', $user_id)->firstOrFail();
         }

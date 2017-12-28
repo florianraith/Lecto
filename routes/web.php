@@ -11,11 +11,21 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('index');
-Route::auth();
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-Route::post('/message/post', 'MessageController@post')->name('postMessage');
-Route::post('/message/delete', 'MessageController@delete')->name('deleteMessage');
+Route::group([
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect' ]
+    ], function() {
 
-Route::get('/profile', 'ProfileController@profile')->name('profile');
-Route::get('/profile/{user_id}', 'ProfileController@show')->name('showProfile');
+    Route::get('/', 'HomeController@index')->name('index');
+    Route::auth();
+
+    Route::post('/message/post', 'MessageController@post')->name('postMessage');
+    Route::post('/message/delete', 'MessageController@delete')->name('deleteMessage');
+
+    Route::get('/profile', 'ProfileController@profile')->name('profile');
+    Route::get('/profile/{user_id}', 'ProfileController@show')->name('showProfile');
+
+
+});
