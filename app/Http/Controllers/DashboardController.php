@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Message;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller {
@@ -20,6 +21,7 @@ class DashboardController extends Controller {
      * @return \Illuminate\Http\Response
      */
     public function index() {
-        return view('dashboard');
+        $messages = Message::all()->where('user_id', Auth::user()->id)->sortBy('created_at');
+        return view('dashboard')->with('messages', $messages);
     }
 }

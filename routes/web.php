@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
-
+Route::get('/', 'HomeController@index')->name('index');
 Route::auth();
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+Route::post('/message/post', 'MessageController@post')->name('postMessage');
+Route::post('/message/delete', 'MessageController@delete')->name('deleteMessage');

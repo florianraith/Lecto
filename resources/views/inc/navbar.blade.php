@@ -1,8 +1,3 @@
-@php
-    $user = null;
-    if(Auth::check()) $user = Auth::user();
-@endphp
-
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="{{ route('index') }}">{{ env('APP_NAME', 'Lecto') }}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,7 +14,7 @@
             @endguest
             @auth
                 <li class="nav-item">
-                    <a class="btn btn-outline-secondary mx-2" href="{{ route('dashboard') }}">{{ $user->name }}</a>
+                    <a class="btn btn-outline-secondary mx-2" href="{{ route('dashboard') }}">{{ Auth::user()->name }}</a>
                 </li>
                 <li class="nav-item">
                     <form action="{{ route('logout') }}" method="post">

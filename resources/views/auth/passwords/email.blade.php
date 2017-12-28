@@ -3,15 +3,13 @@
 @section('main')
     <div class="row justify-content-center">
         <div class="col-md-8 col-md-offset-2">
-            @if(session('status'))
-                <div class="alert alert-success">
-                    {{ session('status') }}
-                </div>
-            @endif
-
-            @if($errors->has('email'))
+            @if ($errors->any())
                 <div class="alert alert-danger">
-                    <strong>Login failed!</strong> {{ $errors->first('email') }}.
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
                 </div>
             @endif
 
