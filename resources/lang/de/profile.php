@@ -12,5 +12,7 @@ return [
     'close_modal' => 'Schließen',
     'create_post' => 'Poste eine Nachricht',
     'create_post_color' => 'Farbe:',
-    'create_post_message' => 'Nachricht:'
+    'create_post_message' => 'Nachricht:',
+    'created' => 'Post wurde erstellt',
+    'deleted' => 'Post wurde gelöscht',
 ];

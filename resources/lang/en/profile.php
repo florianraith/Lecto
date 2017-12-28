@@ -12,5 +12,7 @@ return [
     'close_modal' => 'Close',
     'create_post' => 'Post a message',
     'create_post_color' => 'Color:',
-    'create_post_message' => 'Message:'
+    'create_post_message' => 'Message:',
+    'created' => 'Post created',
+    'deleted' => 'Post deleted',
 ];

@@ -32,3 +32,5 @@ $('#select-color').change(function() {
 
     $header[0].dataset.suffix = suffix;
 });
+
+$('div.alert').not('.alert-important').delay(3000).fadeOut(350);

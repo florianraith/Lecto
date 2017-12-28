@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Message;
 use App\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller {
@@ -30,7 +31,8 @@ class ProfileController extends Controller {
     /**
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function profile() {
+    public function profile(Request $request) {
+        $request->session()->reflash();
         if(Auth::check()) {
             return redirect()->action('ProfileController@show', Auth::user()->name);
         } else {
