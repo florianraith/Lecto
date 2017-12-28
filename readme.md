@@ -5,10 +5,13 @@ A simple social network, inspired by [Twitter], programmed in php using Laravel.
 **Already build in:**
 * Basic authentication
 * Messages
-  * All messages of a user are displayed on their dashboard
-  * Messages can be created and deleted in the dashboard
+  * All messages of a user are displayed on their profile page
+  * Messages can be created and deleted on the profile page
   * Each message can have an individual color
   * All messages are displayed on the start page
+* Profile
+  * The profile page displays all messages from the owner
+  * On your own profile page you can create and delete messages 
 
 **Technologies used:**
  * [php] Popular general-purpose scripting language that is especially suited to web development.
