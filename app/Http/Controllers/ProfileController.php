@@ -23,7 +23,7 @@ class ProfileController extends Controller {
             $user = User::where('name', $user_id)->firstOrFail();
         }
 
-        $messages = Message::all()->where('user_id', $user->id)->sortByDesc('created_at');
+        $messages = Message::where('user_id', $user->id)->orderBy('created_at', 'desc')->paginate(6);
 
         return view('profile.show')->with('messages', $messages)->with('user', $user);
     }

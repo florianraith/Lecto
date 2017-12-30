@@ -40,13 +40,12 @@
             <h3>@lang('profile.your_posts')</h3>
         </div>
 
-        <div class="row">
+        <div class="row" style="height: 35rem;">
             <div class="card-columns">
                 @foreach($messages as $message)
                     <div class="card border-{{ $message->getColor()->getBSuffix() }}">
                         <div class="card-header bg-{{ $message->getColor()->getBSuffix() }} text-{{ $message->getColor()->getBTextSuffix() }}">
                             {{ $message->user->name }}
-                            <span class="ml-1">#{{ $message->id }}</span>
                             <div class="float-right">
                                 <small class="mr-2">{{ $message->created_at }}</small>
                                 <button type="button" class="close text-{{ $message->getColor()->getBTextSuffix() }}" aria-label="Close" style="margin-top: -3px;">
@@ -68,13 +67,13 @@
             <h3>@lang('profile.someone_posts', ['name' => $user->name])</h3>
         </div>
 
-        <div class="row">
+        <div class="row" style="height: 35rem;">
             <div class="card-columns">
                 @foreach($messages as $message)
                     <div class="card border-{{ $message->getColor()->getBSuffix() }}">
                         <div class="card-header bg-{{ $message->getColor()->getBSuffix() }} text-{{ $message->getColor()->getBTextSuffix() }}">
                             {{ $message->user->name }}
-                            <span class="ml-1">#{{ $message->id }}</span><small class=" float-right">{{ $message->created_at }}</small>
+                            <small class=" float-right">{{ $message->created_at }}</small>
                         </div>
                         <div class="card-body">
                             {{ $message->message }}
@@ -84,5 +83,9 @@
             </div>
         </div>
     @endif
+
+    <div class="row justify-content-center">
+        {{ $messages->render('inc.pagination') }}
+    </div>
 
 @endsection

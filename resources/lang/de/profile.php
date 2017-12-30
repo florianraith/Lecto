@@ -6,7 +6,7 @@ return [
     'welcome' => 'Willkommen',
     'post_message' => 'Poste eine Nachricht',
     'your_posts' => 'Deine Posts:',
-    'someone_posts' => ':name\s Posts:',
+    'someone_posts' => ':names Posts:',
     'delete_post' => 'Post löschen',
     'sure_delete_post' => 'Bist du sicher, dass du diesen Beitrag löschen möchtest?',
     'close_modal' => 'Schließen',

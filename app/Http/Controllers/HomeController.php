@@ -7,7 +7,7 @@ use App\Message;
 class HomeController extends Controller {
 
     public function index() {
-        $messages = Message::all()->sortByDesc('created_at');
+            $messages = Message::orderBy('created_at', 'desc')->paginate(6);
         return view('index')->with('messages', $messages);
     }
 
