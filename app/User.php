@@ -28,6 +28,7 @@ class User extends Authenticatable {
 
     /**
      * Get the messages of the user.
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function messages() {
         return $this->hasMany('App\Message');

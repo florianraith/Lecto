@@ -17,7 +17,7 @@ class Message extends Model {
     }
 
     /**
-     * Get the message color
+     * Get the message color as App\Lecto\MessageColor
      * @return MessageColor
      */
     public function getColor(): MessageColor {

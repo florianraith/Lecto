@@ -1,5 +1,6 @@
 <?php
 
+use App\Lecto\MessageColor;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -15,6 +16,7 @@ class CreateMessagesTable extends Migration {
             $table->increments('id');
             $table->integer('user_id');
             $table->text('message');
+            $table->integer('color_id')->default(MessageColor::BLACK);
             $table->timestamps();
         });
     }

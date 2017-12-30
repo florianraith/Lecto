@@ -46,7 +46,7 @@
                     <div class="card border-{{ $message->getColor()->getBSuffix() }}">
                         <div class="card-header bg-{{ $message->getColor()->getBSuffix() }} text-{{ $message->getColor()->getBTextSuffix() }}">
                             {{ $message->user->name }}
-                            <span class="ml-2">#{{ $message->id }}</span>
+                            <span class="ml-1">#{{ $message->id }}</span>
                             <div class="float-right">
                                 <small class="mr-2">{{ $message->created_at }}</small>
                                 <button type="button" class="close text-{{ $message->getColor()->getBTextSuffix() }}" aria-label="Close" style="margin-top: -3px;">
@@ -74,7 +74,7 @@
                     <div class="card border-{{ $message->getColor()->getBSuffix() }}">
                         <div class="card-header bg-{{ $message->getColor()->getBSuffix() }} text-{{ $message->getColor()->getBTextSuffix() }}">
                             {{ $message->user->name }}
-                            <span class="ml-2">#{{ $message->id }}</span><small class="ml-2 float-right">{{ $message->created_at }}</small>
+                            <span class="ml-1">#{{ $message->id }}</span><small class=" float-right">{{ $message->created_at }}</small>
                         </div>
                         <div class="card-body">
                             {{ $message->message }}
