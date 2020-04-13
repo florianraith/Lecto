@@ -1,5 +1,7 @@
 ## Lecto
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/8cee8f67e5464328b24c2c0f0c20865d)](https://app.codacy.com/manual/FlorianRaith/Lecto?utm_source=github.com&utm_medium=referral&utm_content=FlorianRaith/Lecto&utm_campaign=Badge_Grade_Dashboard)
+
 A simple social network, inspired by [Twitter], programmed in php using Laravel.
 
 **Already build in:**
